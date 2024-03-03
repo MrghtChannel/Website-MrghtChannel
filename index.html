@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MrghtChannel</title>
+  <link rel="shortcut icon" href="https://avatars.githubusercontent.com/u/126418894?v=4" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./assets/font/font.css">
+  <link rel="stylesheet" href="./assets/css/style.css">
+
+  <style>
+    /* Стили для модального окна */
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 1;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      overflow: auto;
+      background-color: rgba(0,0,0,0.5);
+    }
+  
+    .modal-content {
+      background-color: rgba(0,0,0,0); /* Прозрачный фон */
+      margin: 10% auto;
+      padding: 20px;
+      /* border: 1px solid #888; */ /* Удалите это свойство или измените на border: none; */
+      border: none; /* Заменил border: 1px solid #888; на border: none; */
+      width: 70%;
+      max-width: 800px; /* Максимальная ширина модального окна */
+    }
+  
+    .close {
+      color: #aaa;
+      float: right;
+      font-size: 28px;
+      font-weight: bold;
+    }
+  
+    .close:hover,
+    .close:focus {
+      color: black;
+      text-decoration: none;
+      cursor: pointer;
+    }
+  
+    iframe {
+      width: 100%;
+      height: 600px; /* Высота iframe в модальном окне */
+    }
+
+    /* Стили для новостей */
+    .news-list {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .news-item {
+      border: 1px solid #ccc;
+      padding: 10px;
+    }
+
+    .news-date {
+      font-weight: bold;
+    }
+  </style>  
+</head>
+
+<body id="top">
+
+  <div class="preloader" data-preloader>
+    <span class="line"></span>
+  </div>
+
+  <header class="header" data-header>
+    <div class="container">
+      <a href="#" class="logo">MrghtChannel</a>
+      <nav class="navbar" data-navbar>
+      </nav>
+      <div class="theme-language-selection">
+        <select class="language-selector" onchange="changeLanguage()">
+          <option value="en">English</option>
+          <option value="uk">Українська мова</option>
+          <option value="de">Deutsch</option>
+        </select>
+      </div>
+      <a href="https://github.com/MrghtChannel" class="btn btn:hover">
+        <span class="span" id="github-link">Github/Gitlab</span>
+        <ion-icon name="arrow-forward" aria-hidden="true"></ion-icon>
+      </a>
+      <div class="overlay" data-overlay data-nav-toggler></div>
+    </div>
+  </header>
+
+  <main>
+    <article>
+
+      <div class="hero text-center" id="home">
+        <div class="container">
+          <div class="banner-outline has-after">
+            <div class="hero-banner img-holder has-after" style="--width: 500; --height: 680;" data-tilt>
+              <img src="./assets/images/hero-banner.jpg" width="500" height="680" alt="MrghtChannel" class="img-cover">
+            </div>
+            <span class="span title">MrghtChannel</span>
+          </div>
+          <div class="hero-content">
+            <h1 class="h1 title" id="hero-title">This is me -----></h1>
+            <div class="wrapper">
+              <a href="#" class="btn btn:hover" id="learn-more-button">
+                <span class="span" id="learn-more">Learn More</span>
+                <ion-icon name="cloud-download-outline" aria-hidden="true"></ion-icon>
+              </a>
+              <p class="hero-text" id="about-me">Link to where I am.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <section class="section cta" aria-label="work with me">
+        <div class="container">
+          <h2 class="title h2 section-title text-center" id="support-me">Support me with donation</h2>
+          <a href="https://www.buymeacoffee.com/MrghtChannel" class="btn btn:hover">
+            <span class="span" id="learn-more">Learn More</span>
+            <ion-icon name="arrow-forward" aria-hidden="true"></ion-icon>
+          </a>
+        </div>
+      </section>
+
+      <section class="section project" aria-label="my latest projects" id="project">
+        <ul class="slider-list">
+          <li class="slider-item">
+            <div class="project-card text-center">
+              <div class="card-banner img-holder has-before" style="--width: 1000; --height: 763;">
+                <img src="./assets/images/project-1.jpg" width="1000" height="763" loading="lazy" alt="-" class="img-cover">
+                <a href="https://discord.gg/ABdK5gVPGt" class="btn btn:hover">
+                  <span class="span" id="learn-more">Learn More</span>
+                  <ion-icon name="arrow-forward" aria-hidden="true"></ion-icon>
+                </a>
+              </div>
+              <div class="card-content">
+                <p class="card-subtitle" id="discord-server">Official Discord Server</p>
+                <h3 class="title h3">
+                  <a href="https://discord.gg/ABdK5gVPGt" class="card-title">Official Discord Server</a>
+                </h3>
+              </div>
+            </div>
+          </li>
+          <li class="slider-item">
+            <div class="project-card text-center">
+              <div class="card-banner img-holder has-before" style="--width: 1000; --height: 763;">
+                <img src="./assets/images/project-2.jpg" width="1000" height="763" loading="lazy" alt="Project poster: Front End Development & Maintenance" class="img-cover">
+                <a href="https://www.facebook.com/profile.php?id=100089889237497" class="btn btn:hover">
+                  <span class="span" id="learn-more">Learn More</span>
+                  <ion-icon name="arrow-forward" aria-hidden="true"></ion-icon>
+                </a>
+              </div>
+              <div class="card-content">
+                <p class="card-subtitle" id="wallet-studio">WALLETSTUDIO</p>
+                <h3 class="title h3">
+                  <a href="https://www.facebook.com/profile.php?id=100089889237497" class="card-title">Small development studio</a>
+                </h3>
+              </div>
+            </div>
+          </li>
+          <li class="slider-item">
+            <div class="project-card text-center">
+              <div class="card-banner img-holder has-before" style="--width: 1000; --height: 763;">
+                <img src="./assets/images/project-3.jpg" width="1000" height="763" loading="lazy" alt="Project poster: Flutter Framework & Warframe Design" class="img-cover">
+                <a href="https://t.me/MrghtChannel_Bot" class="btn btn:hover">
+                  <span class="span" id="learn-more">Learn More</span>
+                  <ion-icon name="arrow-forward" aria-hidden="true"></ion-icon>
+                </a>
+              </div>
+              <div class="card-content">
+                <p class="card-subtitle" id="telegram">Official telegram channel</p>
+                <h3 class="title h3">
+                  <a href="https://t.me/MrghtChannel_Bot" class="card-title">Official telegram channel</a>
+                </h3>
+              </div>
+            </div>
+          </li>
+        </ul>
+      </section>
+
+      <section class="section news" aria-label="latest news">
+        <div class="container">
+          <h2 class="title h2 section-title text-center">Latest News</h2>
+          <div class="news-list" id="news-list">
+            <!-- Здесь будут отображаться новости из файла news.txt -->
+          </div>
+        </div>
+      </section>
+
+      <footer class="footer">
+        <div class="container">
+          <p>&copy; 2024 MrghtChannel. All rights reserved.</p>
+        </div>
+      </footer>
+
+      <div class="cursor-dot" data-cursor></div>
+      <div class="cursor-outline" data-cursor></div>
+
+      <div id="modal" class="modal">
+        <div class="modal-content">
+          <span class="close">&times;</span>
+          <iframe src="modal/index.html" frameborder="0"></iframe>
+        </div>
+      </div>
+
+      <script>
+        function changeLanguage() {
+          var selectElement = document.querySelector('.language-selector');
+          var selectedLanguage = selectElement.value;
+
+          var translations = {
+            'en': {
+              'github-link': 'Github/Gitlab',
+              'hero-title': 'This is me ----->',
+              'learn-more': 'Learn More',
+              'about-me': 'Link to where I am.',
+              'support-me': 'Support me with donation',
+              'discord-server': 'Official Discord Server',
+              'wallet-studio': 'WALLETSTUDIO',
+              'telegram': 'Official telegram channel'
+            },
+            'uk': {
+              'github-link': 'Github/Gitlab',
+              'hero-title': 'Це я ----->',
+              'learn-more': 'Дізнатися більше',
+              'about-me': 'Посилання на те, де я',
+              'support-me': 'Підтримайте мене донатом',
+              'discord-server': 'Офіційний Discord Сервер',
+              'wallet-studio': 'WALLETSTUDIO',
+              'telegram': 'Офіційний телеграм канал'
+            },
+            'de': {
+              'github-link': 'Github/Gitlab',
+              'hero-title': 'Das bin ich ----->',
+              'learn-more': 'Erfahren Sie mehr',
+              'about-me': 'Link zu wo ich bin.',
+              'support-me': 'Unterstützen Sie mich mit Spende',
+              'discord-server': 'Offizieller Discord-Server',
+              'wallet-studio': 'WALLETSTUDIO',
+              'telegram': 'Offizieller Telegramm-Kanal'
+            }
+          };
+
+          var translation = translations[selectedLanguage];
+
+          document.getElementById('github-link').innerText = translation['github-link'];
+          document.getElementById('hero-title').innerText = translation['hero-title'];
+          document.getElementById('learn-more').innerText = translation['learn-more'];
+          document.getElementById('about-me').innerText = translation['about-me'];
+          document.getElementById('support-me').innerText = translation['support-me'];
+          document.getElementById('discord-server').innerText = translation['discord-server'];
+          document.getElementById('wallet-studio').innerText = translation['wallet-studio'];
+          document.getElementById('telegram').innerText = translation['telegram'];
+
+          console.log('Выбран язык:', selectedLanguage);
+        }
+
+        var modal = document.getElementById('modal');
+        var learnMoreButton = document.getElementById('learn-more-button');
+        var closeButton = document.getElementsByClassName('close')[0];
+
+        function openModal() {
+          modal.style.display = 'block';
+        }
+
+        function closeModal() {
+          modal.style.display = 'none';
+        }
+
+        learnMoreButton.addEventListener('click', openModal);
+
+        closeButton.addEventListener('click', closeModal);
+
+        window.addEventListener('click', function(event) {
+          if (event.target == modal) {
+            closeModal();
+          }
+        });
+
+        // Загрузка и отображение новостей
+        document.addEventListener('DOMContentLoaded', function() {
+          fetch('https://docs.google.com/document/d/18_DGGgVGksbp1roUliIe3hYoAchfyRIxTe30GxtiGLA/export?format=txt')
+            .then(response => response.text())
+            .then(data => {
+              const newsList = document.getElementById('news-list');
+              const newsItems = data.split('\n');
+              newsItems.forEach(newsItem => {
+                const [date, news] = newsItem.split(' | ');
+                const newsElement = document.createElement('div');
+                newsElement.classList.add('news-item');
+                newsElement.innerHTML = `
+                  <div class="news-date">${date}</div>
+                  <div class="news-content">${news}</div>
+                `;
+                newsList.appendChild(newsElement);
+              });
+            })
+            .catch(error => {
+              console.error('Error fetching news:', error);
+            });
+        });
+      </script>
+
+    </article>
+  </main>
+
+  <script src="./assets/js/script.js"></script>
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+</body>
+</html>
