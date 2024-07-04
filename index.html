@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -23,36 +24,35 @@
       width: 100%;
       height: 100%;
       overflow: auto;
-      background-color: rgba(0,0,0,0.5);
+      background-color: rgba(0, 0, 0, 0.5);
     }
-  
+
     .modal-content {
-      background-color: rgba(0,0,0,0); /* Прозрачный фон */
+      background-color: rgba(0, 0, 0, 0);
       margin: 10% auto;
       padding: 20px;
-      /* border: 1px solid #888; */ /* Удалите это свойство или измените на border: none; */
-      border: none; /* Заменил border: 1px solid #888; на border: none; */
+      border: none;
       width: 70%;
-      max-width: 800px; /* Максимальная ширина модального окна */
+      max-width: 800px;
     }
-  
+
     .close {
       color: #aaa;
       float: right;
       font-size: 28px;
       font-weight: bold;
     }
-  
+
     .close:hover,
     .close:focus {
       color: black;
       text-decoration: none;
       cursor: pointer;
     }
-  
+
     iframe {
       width: 100%;
-      height: 600px; /* Высота iframe в модальном окне */
+      height: 600px;
     }
 
     /* Стили для новостей */
@@ -70,7 +70,63 @@
     .news-date {
       font-weight: bold;
     }
-  </style>  
+
+    /* Стили для панели проектов */
+    .project-panel {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      justify-content: center;
+    }
+
+    .project-card {
+      width: 300px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      overflow: hidden;
+    }
+
+    .project-info {
+      padding: 20px;
+    }
+
+    .project-title {
+      font-size: 18px;
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+
+    .project-link {
+      display: block;
+      text-align: center;
+      margin-top: 10px;
+      text-decoration: none;
+      color: #333;
+      background-color: #f0f0f0;
+      padding: 8px 0;
+      border-radius: 5px;
+    }
+
+    .project-link:hover {
+      background-color: #e0e0e0;
+    }
+
+    /* Стили для выбора языка */
+    .language-selector {
+      padding: 8px 16px; /* Подобные размеры кнопок GitHub/GitLab */
+      border-radius: 6px; /* Закругленные углы */
+      border: 1px solid #24292e; /* Цвет границы как у GitHub/GitLab */
+      font-size: 16px;
+      background-color: #24292e; /* Цвет фона как у GitHub/GitLab */
+      color: #fff; /* Цвет текста белый */
+      cursor: pointer;
+      transition: background-color 0.3s ease; /* Плавное изменение цвета при наведении */
+    }
+
+    .language-selector:hover {
+      background-color: #444c56; /* Цвет при наведении как у GitHub/GitLab */
+    }
+  </style>
 </head>
 
 <body id="top">
@@ -111,7 +167,7 @@
             <span class="span title">MrghtChannel</span>
           </div>
           <div class="hero-content">
-            <h1 class="h1 title" id="hero-title">This is me -----></h1>
+            <h1 class="h1 title" id="hero-title">This is me ---></h1>
             <div class="wrapper">
               <a href="#" class="btn btn:hover" id="learn-more-button">
                 <span class="span" id="learn-more">Learn More</span>
@@ -122,7 +178,6 @@
           </div>
         </div>
       </div>
-
       <section class="section cta" aria-label="work with me">
         <div class="container">
           <h2 class="title h2 section-title text-center" id="support-me">Support me with donation</h2>
@@ -132,10 +187,9 @@
           </a>
         </div>
       </section>
-
-      <section class="section project" aria-label="my latest projects" id="project">
-        <ul class="slider-list">
-          <li class="slider-item">
+        <div class="container">
+          <div class="project-panel">
+            <!-- Проект 1 -->
             <div class="project-card text-center">
               <div class="card-banner img-holder has-before" style="--width: 1000; --height: 763;">
                 <img src="./assets/images/project-1.jpg" width="1000" height="763" loading="lazy" alt="-" class="img-cover">
@@ -151,8 +205,7 @@
                 </h3>
               </div>
             </div>
-          </li>
-          <li class="slider-item">
+            <!-- Проект 2 -->
             <div class="project-card text-center">
               <div class="card-banner img-holder has-before" style="--width: 1000; --height: 763;">
                 <img src="./assets/images/project-2.jpg" width="1000" height="763" loading="lazy" alt="Project poster: Front End Development & Maintenance" class="img-cover">
@@ -164,129 +217,179 @@
               <div class="card-content">
                 <p class="card-subtitle" id="wallet-studio">WALLETSTUDIO</p>
                 <h3 class="title h3">
-                  <a href="https://www.facebook.com/profile.php?id=100089889237497" class="card-title">Small development studio</a>
-                </h3>
+                  <a href="https://www.facebook.com/profile.php?id=100089889237497" class="card-title">Small development studio                </a>
+                </div>
+              </div>
+              <!-- Проект 3 -->
+              <div class="project-card text-center">
+                <div class="card-banner img-holder has-before" style="--width: 1000; --height: 763;">
+                  <img src="./assets/images/project-3.jpg" width="1000" height="763" loading="lazy" alt="Project poster: Flutter Framework & Warframe Design" class="img-cover">
+                  <a href="https://t.me/MrghtChannel_Bot" class="btn btn:hover">
+                    <span class="span" id="learn-more">Learn More</span>
+                    <ion-icon name="arrow-forward" aria-hidden="true"></ion-icon>
+                  </a>
+                </div>
+                <div class="card-content">
+                  <p class="card-subtitle" id="telegram">Official telegram channel</p>
+                  <h3 class="title h3">
+                    <a href="https://t.me/MrghtChannel_Bot" class="card-title">Official telegram channel</a>
+                  </h3>
+                </div>
+              </div>
+              <!-- Новый элемент -->
+              <div class="project-card text-center">
+                <div class="card-banner img-holder has-before" style="--width: 1000; --height: 763;">
+                  <img src="./assets/images/project-4.jpg" width="1000" height="763" loading="lazy" alt="New Project" class="img-cover">
+                  <a href="https://example.com" class="btn btn:hover">
+                    <span class="span" id="learn-more">Learn More</span>
+                    <ion-icon name="arrow-forward" aria-hidden="true"></ion-icon>
+                  </a>
+                </div>
+                <div class="card-content">
+                  <p class="card-subtitle">New Project Subtitle</p>
+                  <h3 class="title h3">
+                    <a href="https://example.com" class="card-title">New Project Title</a>
+                  </h3>
+                </div>
               </div>
             </div>
-          </li>
-          <li class="slider-item">
-            <div class="project-card text-center">
-              <div class="card-banner img-holder has-before" style="--width: 1000; --height: 763;">
-                <img src="./assets/images/project-3.jpg" width="1000" height="763" loading="lazy" alt="Project poster: Flutter Framework & Warframe Design" class="img-cover">
-                <a href="https://t.me/MrghtChannel_Bot" class="btn btn:hover">
-                  <span class="span" id="learn-more">Learn More</span>
-                  <ion-icon name="arrow-forward" aria-hidden="true"></ion-icon>
-                </a>
-              </div>
-              <div class="card-content">
-                <p class="card-subtitle" id="telegram">Official telegram channel</p>
-                <h3 class="title h3">
-                  <a href="https://t.me/MrghtChannel_Bot" class="card-title">Official telegram channel</a>
-                </h3>
-              </div>
+          </div>
+        </section>
+        <section class="section news" aria-label="latest news">
+          <div class="container">
+            <h2 class="title h2 section-title text-center">Latest News</h2>
+            <div class="news-list" id="news-list">
+              <!-- Здесь будут отображаться новости из файла news.txt -->
             </div>
-          </li>
-        </ul>
-      </section>
-
-      <section class="section news" aria-label="latest news">
-        <div class="container">
-          <h2 class="title h2 section-title text-center">Latest News</h2>
-          <div class="news-list" id="news-list">
-            <!-- Здесь будут отображаться новости из файла news.txt -->
+          </div>
+        </section>
+  
+        <footer class="footer">
+          <div class="container">
+            <p>&copy; 2024 MrghtChannel. All rights reserved.</p>
+          </div>
+        </footer>
+  
+        <div class="cursor-dot" data-cursor></div>
+        <div class="cursor-outline" data-cursor></div>
+  
+        <div id="modal" class="modal">
+          <div class="modal-content">
+            <span class="close">&times;</span>
+            <iframe src="modal/index.html" frameborder="0"></iframe>
           </div>
         </div>
-      </section>
-
-      <footer class="footer">
-        <div class="container">
-          <p>&copy; 2024 MrghtChannel. All rights reserved.</p>
-        </div>
-      </footer>
-
-      <div class="cursor-dot" data-cursor></div>
-      <div class="cursor-outline" data-cursor></div>
-
-      <div id="modal" class="modal">
-        <div class="modal-content">
-          <span class="close">&times;</span>
-          <iframe src="modal/index.html" frameborder="0"></iframe>
-        </div>
-      </div>
-
-      <script>
-        function changeLanguage() {
-          var selectElement = document.querySelector('.language-selector');
-          var selectedLanguage = selectElement.value;
-
-          var translations = {
-            'en': {
-              'github-link': 'Github/Gitlab',
-              'hero-title': 'This is me ----->',
-              'learn-more': 'Learn More',
-              'about-me': 'Link to where I am.',
-              'support-me': 'Support me with donation',
-              'discord-server': 'Official Discord Server',
-              'wallet-studio': 'WALLETSTUDIO',
-              'telegram': 'Official telegram channel'
-            },
-            'uk': {
-              'github-link': 'Github/Gitlab',
-              'hero-title': 'Це я ----->',
-              'learn-more': 'Дізнатися більше',
-              'about-me': 'Посилання на те, де я',
-              'support-me': 'Підтримайте мене донатом',
-              'discord-server': 'Офіційний Discord Сервер',
-              'wallet-studio': 'WALLETSTUDIO',
-              'telegram': 'Офіційний телеграм канал'
-            },
-            'de': {
-              'github-link': 'Github/Gitlab',
-              'hero-title': 'Das bin ich ----->',
-              'learn-more': 'Erfahren Sie mehr',
-              'about-me': 'Link zu wo ich bin.',
-              'support-me': 'Unterstützen Sie mich mit Spende',
-              'discord-server': 'Offizieller Discord-Server',
-              'wallet-studio': 'WALLETSTUDIO',
-              'telegram': 'Offizieller Telegramm-Kanal'
-            }
-          };
-
-          var translation = translations[selectedLanguage];
-
-          document.getElementById('github-link').innerText = translation['github-link'];
-          document.getElementById('hero-title').innerText = translation['hero-title'];
-          document.getElementById('learn-more').innerText = translation['learn-more'];
-          document.getElementById('about-me').innerText = translation['about-me'];
-          document.getElementById('support-me').innerText = translation['support-me'];
-          document.getElementById('discord-server').innerText = translation['discord-server'];
-          document.getElementById('wallet-studio').innerText = translation['wallet-studio'];
-          document.getElementById('telegram').innerText = translation['telegram'];
-
-          console.log('Выбран язык:', selectedLanguage);
-        }
-
-        var modal = document.getElementById('modal');
-        var learnMoreButton = document.getElementById('learn-more-button');
-        var closeButton = document.getElementsByClassName('close')[0];
-
-        function openModal() {
-          modal.style.display = 'block';
-        }
-
-        function closeModal() {
-          modal.style.display = 'none';
-        }
-
-        learnMoreButton.addEventListener('click', openModal);
-
-        closeButton.addEventListener('click', closeModal);
-
-        window.addEventListener('click', function(event) {
-          if (event.target == modal) {
-            closeModal();
+  
+        <script>
+          function changeLanguage() {
+            var selectElement = document.querySelector('.language-selector');
+            var selectedLanguage = selectElement.value;
+  
+            var translations = {
+              'en': {
+                'github-link': 'Github/Gitlab',
+                'hero-title': 'This is me --->',
+                'learn-more': 'Learn More',
+                'about-me': 'Link to where I am.',
+                'support-me': 'Support me with donation',
+                'discord-server': 'Official Discord Server',
+                'wallet-studio': 'WALLETSTUDIO',
+                'telegram': 'Official telegram channel'
+              },
+              'uk': {
+                'github-link': 'Github/Gitlab',
+                'hero-title': 'Це я --->',
+                'learn-more': 'Дізнатися більше',
+                'about-me': 'Посилання на те, де я',
+                'support-me': 'Підтримайте мене донатом',
+                'discord-server': 'Офіційний Discord Сервер',
+                'wallet-studio': 'WALLETSTUDIO',
+                'telegram': 'Офіційний телеграм канал'
+              },
+              'de': {
+                'github-link': 'Github/Gitlab',
+                'hero-title': 'Das bin ich --->',
+                'learn-more': 'Erfahren Sie mehr',
+                'about-me': 'Link zu wo ich bin.',
+                'support-me': 'Unterstützen Sie mich mit Spende',
+                'discord-server': 'Offizieller Discord-Server',
+                'wallet-studio': 'WALLETSTUDIO',
+                'telegram': 'Offizieller Telegramm-Kanal'
+              }
+            };
+  
+            var translation = translations[selectedLanguage];
+  
+            document.getElementById('github-link').innerText = translation['github-link'];
+            document.getElementById('hero-title').innerText = translation['hero-title'];
+            document.getElementById('learn-more').innerText = translation['learn-more'];
+            document.getElementById('about-me').innerText = translation['about-me'];
+            document.getElementById('support-me').innerText = translation['support-me'];
+            document.getElementById('discord-server').innerText = translation['discord-server'];
+            document.getElementById('wallet-studio').innerText = translation['wallet-studio'];
+            document.getElementById('telegram').innerText = translation['telegram'];
+  
+            console.log('Выбран язык:', selectedLanguage);
           }
-        });
+  
+          var modal = document.getElementById('modal');
+          var learnMoreButton = document.getElementById('learn-more-button');
+          var closeButton = document.getElementsByClassName('close')[0];
+  
+          function openModal() {
+            modal.style.display = 'block';
+          }
+  
+          function closeModal() {
+            modal.style.display = 'none';
+          }
+  
+          learnMoreButton.addEventListener('click', openModal);
+  
+          closeButton.addEventListener('click', closeModal);
+  
+          window.addEventListener('click', function(event) {
+            if (event.target == modal) {
+              closeModal();
+            }
+          });
+  
+  
+        // Функция для получения данных о проектах с GitHub API
+        async function fetchGitHubProjects(username) {
+          const response = await fetch(`https://api.github.com/users/${username}/repos`);
+          const data = await response.json();
+          return data;
+        }
+
+        // Ваше имя пользователя на GitHub
+        const username = 'mrghtchannel';
+
+        // Основная функция для отображения проектов
+        async function displayProjects() {
+          const projectPanel = document.querySelector('.project-panel');
+          try {
+            const projects = await fetchGitHubProjects(username);
+            projects.forEach(project => {
+              const projectCard = document.createElement('div');
+              projectCard.classList.add('project-card');
+              projectCard.innerHTML = `
+                </div>
+                <div class="project-info">
+                  <h3 class="project-title">${project.name}</h3>
+                  <a href="${project.html_url}" class="project-link">View on GitHub</a>
+                </div>
+              `;
+              projectPanel.appendChild(projectCard);
+            });
+          } catch (error) {
+            console.error('Ошибка загрузки проектов:', error);
+            projectPanel.innerHTML = '<p>Ошибка загрузки проектов</p>';
+          }
+        }
+
+        // Вызов функции для отображения проектов
+        displayProjects();
 
         // Загрузка и отображение новостей
         document.addEventListener('DOMContentLoaded', function() {
@@ -320,4 +423,5 @@
   <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
 
 </body>
+
 </html>
