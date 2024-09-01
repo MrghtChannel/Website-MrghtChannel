@@ -14,7 +14,6 @@
   <link rel="stylesheet" href="./assets/css/style.css">
 
   <style>
-    /* Стили для модального окна */
     .modal {
       display: none;
       position: fixed;
@@ -54,8 +53,6 @@
       width: 100%;
       height: 600px;
     }
-
-    /* Стили для новостей */
     .news-list {
       display: flex;
       flex-direction: column;
@@ -71,7 +68,6 @@
       font-weight: bold;
     }
 
-    /* Стили для панели проектов */
     .project-panel {
       display: flex;
       flex-wrap: wrap;
@@ -111,20 +107,19 @@
       background-color: #e0e0e0;
     }
 
-    /* Стили для выбора языка */
     .language-selector {
-      padding: 8px 16px; /* Подобные размеры кнопок GitHub/GitLab */
-      border-radius: 6px; /* Закругленные углы */
-      border: 1px solid #24292e; /* Цвет границы как у GitHub/GitLab */
+      padding: 8px 16px; 
+      border-radius: 6px; 
+      border: 1px solid #24292e; 
       font-size: 16px;
-      background-color: #24292e; /* Цвет фона как у GitHub/GitLab */
-      color: #fff; /* Цвет текста белый */
+      background-color: #24292e; 
+      color: #fff; 
       cursor: pointer;
-      transition: background-color 0.3s ease; /* Плавное изменение цвета при наведении */
+      transition: background-color 0.3s ease; 
     }
 
     .language-selector:hover {
-      background-color: #444c56; /* Цвет при наведении как у GitHub/GitLab */
+      background-color: #444c56; 
     }
   </style>
 </head>
@@ -187,79 +182,60 @@
           </a>
         </div>
       </section>
-        <div class="container">
-          <div class="project-panel">
-            <!-- Проект 1 -->
-            <div class="project-card text-center">
-              <div class="card-banner img-holder has-before" style="--width: 1000; --height: 763;">
-                <img src="./assets/images/project-1.jpg" width="1000" height="763" loading="lazy" alt="-" class="img-cover">
-                <a href="https://discord.gg/ABdK5gVPGt" class="btn btn:hover">
-                  <span class="span" id="learn-more">Learn More</span>
-                  <ion-icon name="arrow-forward" aria-hidden="true"></ion-icon>
-                </a>
-              </div>
-              <div class="card-content">
-                <p class="card-subtitle" id="discord-server">Official Discord Server</p>
-                <h3 class="title h3">
-                  <a href="https://discord.gg/ABdK5gVPGt" class="card-title">Official Discord Server</a>
-                </h3>
-              </div>
+      <div class="container">
+        <div class="project-panel">
+          <div class="project-card text-center">
+            <div class="card-banner img-holder has-before" style="--width: 1000; --height: 763;">
+              <img src="./assets/images/project-1.jpg" width="1000" height="763" loading="lazy" alt="-" class="img-cover">
+              <a href="https://discord.gg/ABdK5gVPGt" class="btn btn:hover">
+                <span class="span" id="learn-more">Learn More</span>
+                <ion-icon name="arrow-forward" aria-hidden="true"></ion-icon>
+              </a>
             </div>
-            <!-- Проект 2 -->
-            <div class="project-card text-center">
-              <div class="card-banner img-holder has-before" style="--width: 1000; --height: 763;">
-                <img src="./assets/images/project-2.jpg" width="1000" height="763" loading="lazy" alt="Project poster: Front End Development & Maintenance" class="img-cover">
-                <a href="https://www.facebook.com/profile.php?id=100089889237497" class="btn btn:hover">
-                  <span class="span" id="learn-more">Learn More</span>
-                  <ion-icon name="arrow-forward" aria-hidden="true"></ion-icon>
-                </a>
-              </div>
-              <div class="card-content">
-                <p class="card-subtitle" id="wallet-studio">WALLETSTUDIO</p>
-                <h3 class="title h3">
-                  <a href="https://www.facebook.com/profile.php?id=100089889237497" class="card-title">Small development studio                </a>
-                </div>
-              </div>
-              <!-- Проект 3 -->
-              <div class="project-card text-center">
-                <div class="card-banner img-holder has-before" style="--width: 1000; --height: 763;">
-                  <img src="./assets/images/project-3.jpg" width="1000" height="763" loading="lazy" alt="Project poster: Flutter Framework & Warframe Design" class="img-cover">
-                  <a href="https://t.me/MrghtChannel_Bot" class="btn btn:hover">
-                    <span class="span" id="learn-more">Learn More</span>
-                    <ion-icon name="arrow-forward" aria-hidden="true"></ion-icon>
-                  </a>
-                </div>
-                <div class="card-content">
-                  <p class="card-subtitle" id="telegram">Official telegram channel</p>
-                  <h3 class="title h3">
-                    <a href="https://t.me/MrghtChannel_Bot" class="card-title">Official telegram channel</a>
-                  </h3>
-                </div>
-              </div>
-              <!-- Новый элемент -->
-              <div class="project-card text-center">
-                <div class="card-banner img-holder has-before" style="--width: 1000; --height: 763;">
-                  <img src="./assets/images/project-4.jpg" width="1000" height="763" loading="lazy" alt="New Project" class="img-cover">
-                  <a href="https://example.com" class="btn btn:hover">
-                    <span class="span" id="learn-more">Learn More</span>
-                    <ion-icon name="arrow-forward" aria-hidden="true"></ion-icon>
-                  </a>
-                </div>
-                <div class="card-content">
-                  <p class="card-subtitle">New Project Subtitle</p>
-                  <h3 class="title h3">
-                    <a href="https://example.com" class="card-title">New Project Title</a>
-                  </h3>
-                </div>
-              </div>
+            <div class="card-content">
+              <p class="card-subtitle" id="discord-server">Official Discord Server</p>
+              <h3 class="title h3">
+                <a href="https://discord.gg/ABdK5gVPGt" class="card-title">Official Discord Server</a>
+              </h3>
             </div>
           </div>
+          <div class="project-card text-center">
+            <div class="card-banner img-holder has-before" style="--width: 1000; --height: 763;">
+              <img src="./assets/images/project-2.jpg" width="1000" height="763" loading="lazy" alt="Project poster: Front End Development & Maintenance" class="img-cover">
+              <a href="https://www.facebook.com/profile.php?id=100089889237497" class="btn btn:hover">
+                <span class="span" id="learn-more">Learn More</span>
+                <ion-icon name="arrow-forward" aria-hidden="true"></ion-icon>
+              </a>
+            </div>
+            <div class="card-content">
+              <p class="card-subtitle" id="wallet-studio">WALLETSTUDIO</p>
+              <h3 class="title h3">
+                <a href="https://www.facebook.com/profile.php?id=100089889237497" class="card-title">Small development studio</a>
+              </h3>
+            </div>
+          </div>
+          <div class="project-card text-center">
+            <div class="card-banner img-holder has-before" style="--width: 1000; --height: 763;">
+              <img src="./assets/images/project-3.jpg" width="1000" height="763" loading="lazy" alt="Project poster: Flutter Framework & Warframe Design" class="img-cover">
+              <a href="https://t.me/MrghtChannel_Bot" class="btn btn:hover">
+                <span class="span" id="learn-more">Learn More</span>
+                <ion-icon name="arrow-forward" aria-hidden="true"></ion-icon>
+              </a>
+            </div>
+            <div class="card-content">
+              <p class="card-subtitle" id="telegram">Official telegram channel</p>
+              <h3 class="title h3">
+                <a href="https://t.me/MrghtChannel_Bot" class="card-title">Official telegram channel</a>
+              </h3>
+            </div>
+          </div>
+        </div>
+      </div>
         </section>
         <section class="section news" aria-label="latest news">
           <div class="container">
             <h2 class="title h2 section-title text-center">Latest News</h2>
             <div class="news-list" id="news-list">
-              <!-- Здесь будут отображаться новости из файла news.txt -->
             </div>
           </div>
         </section>
@@ -355,17 +331,14 @@
           });
   
   
-        // Функция для получения данных о проектах с GitHub API
         async function fetchGitHubProjects(username) {
           const response = await fetch(`https://api.github.com/users/${username}/repos`);
           const data = await response.json();
           return data;
         }
 
-        // Ваше имя пользователя на GitHub
         const username = 'mrghtchannel';
 
-        // Основная функция для отображения проектов
         async function displayProjects() {
           const projectPanel = document.querySelector('.project-panel');
           try {
@@ -388,10 +361,8 @@
           }
         }
 
-        // Вызов функции для отображения проектов
         displayProjects();
 
-        // Загрузка и отображение новостей
         document.addEventListener('DOMContentLoaded', function() {
           fetch('https://docs.google.com/document/d/18_DGGgVGksbp1roUliIe3hYoAchfyRIxTe30GxtiGLA/export?format=txt')
             .then(response => response.text())
